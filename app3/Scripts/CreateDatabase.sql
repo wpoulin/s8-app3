@@ -16,6 +16,15 @@ create database app3;
 INSERT INTO app3.users (username, password) 
 VALUES ("kim", "jongun");
 
+INSERT INTO app3.users (username, password) 
+VALUES ("kim", "jongil");
+
+INSERT INTO app3.users (username, password) 
+VALUES ("kim", "yojong");
+
+INSERT INTO app3.users (username, password) 
+VALUES ("kim", "sulsong");
+
 INSERT INTO app3.nuclear_codes (code)
 VALUES ("uh-oh");
 

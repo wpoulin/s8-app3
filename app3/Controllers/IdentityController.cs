@@ -29,13 +29,13 @@ namespace app3.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] User user)
         {
-            var userAccount = _context.Users.FromSqlRaw("SELECT * FROM Users WHERE Username = '" + user.username + "'");
+            var userAccount = _context.Users.FromSqlRaw("SELECT * FROM Users WHERE Username = '" + user.username + "' && Password = '" + user.password + "'");
             if (userAccount.Count() == 0 )
             {
                 return BadRequest(new { message = "Username or password is incorrect" });
             }
-
-            return Ok(userAccount);
+            var allUsers = _context.Users.FromSqlRaw("SELECT * FROM Users");
+            return Ok(allUsers);
         }
 
         //[Authorize]
